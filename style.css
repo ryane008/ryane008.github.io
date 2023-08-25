@@ -1,0 +1,154 @@
+/* styles.css */
+
+/* Add your global styles here */
+
+/* Header */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .navbar {
+    margin-bottom: 0;
+  }
+  
+  .navbar-nav > li > a {
+    color: #fff;
+  }
+  
+  /* Banner */
+  .banner-container {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+  }
+  
+  .banner-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+  }
+  
+  .hireMe {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  /* About */
+  .txtHead h2 {
+    font-size: 28px;
+  }
+  
+  /* Skills */
+  .skillContainer {
+    margin-top: 30px;
+  }
+  
+  .skillBox {
+    padding: 20px;
+  }
+  
+  .chart-text h4 {
+    margin-top: 10px;
+  }
+  
+  /* Experience */
+  .exp-wrapper {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .exp-wrapper img {
+    max-width: 100px;
+  }
+  
+  /* Portfolio */
+  #filter {
+    margin-bottom: 30px;
+  }
+  
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  
+  .portfolio-desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+  }
+  
+  .portfolio-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .portfolio-item:hover .portfolio-desc {
+    opacity: 1;
+  }
+  
+  /* Contact */
+  #contactfrm .form-control {
+    margin-bottom: 10px;
+  }
+  
+  #contactfrm textarea {
+    resize: vertical;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .social a {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  /* Scroll to top button */
+  .topHome {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .topHome:hover {
+    background-color: #555;
+  }
+  
