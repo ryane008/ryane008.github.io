@@ -64,7 +64,7 @@ export default function Home() {
           <h3>Follow the strings</h3>
           <p>
             Every page is a card on a bulletin board, tied to related pages. The strip under the masthead lists the
-            strings from wherever you are. Press <kbd>[</kbd> <kbd>]</kbd> to step through them.
+            strings from wherever you are. Press <kbd>[</kbd> or <kbd>]</kbd> to step through them (no Ctrl or ⌘ needed), then <kbd>Enter</kbd> to open one.
           </p>
         </div>
         <div>

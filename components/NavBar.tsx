@@ -78,7 +78,7 @@ export function NavBar() {
                 {nodeById[id].short}
               </NavLink>
             ))}
-            <kbd className="chips__hint" title="Press [ or ] to step between strings">[ ]</kbd>
+            <kbd className="chips__hint" title="Press [ or ] to step between strings, Enter to open">[ ]</kbd>
           </div>
         )}
       </div>

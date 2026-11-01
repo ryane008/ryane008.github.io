@@ -64,7 +64,7 @@ export const NODES: SiteNode[] = [
     short: "About",
     fsPath: "about",
     kicker: "Profile",
-    dek: "Where I'm from, Brown, the newsroom feature beat on me, and where I'm headed.",
+    dek: "Where I'm from, Brown, the newsroom \u201cfeatures beat\u201d on me, and where I'm headed.",
     kind: "main",
     box: main(640, 380, 1.4),
     image: "/media/photos/ryan-hiking-boulders.jpg",
