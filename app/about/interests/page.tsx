@@ -6,6 +6,10 @@ export const metadata: Metadata = { title: "Interests" };
 
 const TECHNICAL: { title: string; body: React.ReactNode }[] = [
   {
+    title: "Machine learning & data science",
+    body: "Coming to understand why the models in use today work (or don’t), and how we can do better.",
+  },
+  {
     title: "Quantitative finance",
     body: (
       <>
@@ -31,10 +35,6 @@ const TECHNICAL: { title: string; body: React.ReactNode }[] = [
         telemetry at AWS. Exploring how the world stays connected, via the cloud and beyond.
       </>
     ),
-  },
-  {
-    title: "Machine learning & data science",
-    body: "Coming to understand why the models in use today work (or don’t), and how we can do better.",
   },
   {
     title: "Data journalism",
