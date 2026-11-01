@@ -16,7 +16,7 @@ type Role = {
   points?: React.ReactNode[];
 };
 
-const QUANT: Role[] = [
+const WORK: Role[] = [
   {
     id: "aws",
     org: "Amazon Web Services",
@@ -143,14 +143,14 @@ export default function Experience() {
       />
       <ExperienceNav
         items={[
-          ...QUANT.map((r) => ({ id: r.id, when: r.when, role: r.role, org: r.short ?? r.org, group: "Quant & engineering" })),
+          ...WORK.map((r) => ({ id: r.id, when: r.when, role: r.role, org: r.short ?? r.org, group: "Data science & engineering" })),
           ...LEADERSHIP.map((r) => ({ id: r.id, when: r.when, role: r.role, org: r.short ?? r.org, group: "Teaching & leadership" })),
         ]}
       />
       <h2 className="kicker" style={{ marginTop: 0 }}>
-        Quantitative &amp; engineering
+        Data science &amp; engineering
       </h2>
-      <Timeline roles={QUANT} />
+      <Timeline roles={WORK} />
       <h2 className="kicker" style={{ marginTop: 48 }}>
         Teaching &amp; leadership
       </h2>
