@@ -8,11 +8,21 @@ import { useSite } from "./SiteProvider";
 export function NavBar() {
   const { current, animate, setAnimate, shellOpen, setShellOpen } = useSite();
   const chipsRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const strings = current && current !== "board" ? neighbors(current) : [];
   const section = current && current !== "board" ? nodeById[current] : null;
   // The main-nav item to underline: a spoke or a subpage lights up its parent.
   const activeMain =
     current === "board" ? "board" : section ? (MAIN_NAV.find((id) => section.fsPath.startsWith(nodeById[id].fsPath)) ?? null) : null;
+
+  // Publish the masthead's real height (it wraps on narrow screens) for sticky and anchor offsets.
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => document.documentElement.style.setProperty("--masthead-h", `${el.offsetHeight}px`));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   // ` toggles the shell; [ and ] step between neighboring nodes.
   useEffect(() => {
@@ -36,7 +46,7 @@ export function NavBar() {
   }, [setShellOpen]);
 
   return (
-    <header className="masthead">
+    <header ref={headerRef} className="masthead">
       <div className="masthead__row">
         <NavLink href="/" className="masthead__name">
           Ryan Eng

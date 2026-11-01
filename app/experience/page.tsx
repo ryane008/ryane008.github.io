@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import { PageHeader, StringsFooter } from "@/components/Article";
+import { ExperienceNav } from "@/components/ExperienceNav";
 import { NavLink } from "@/components/NavLink";
 
 export const metadata: Metadata = { title: "Professional experience" };
 
-type Role = { org: string; role: string; when: string; points?: React.ReactNode[] };
+type Role = {
+  /** Anchor for the timeline strip. */
+  id: string;
+  org: string;
+  /** Org name as it fits on a timeline card. */
+  short?: string;
+  role: string;
+  when: string;
+  points?: React.ReactNode[];
+};
 
 const QUANT: Role[] = [
   {
+    id: "aws",
     org: "Amazon Web Services",
+    short: "AWS",
     role: "Cloud Engineer Intern",
     when: "Jun – Aug 2026",
     points: [
@@ -19,12 +31,15 @@ const QUANT: Role[] = [
     ],
   },
   {
+    id: "trexquant",
     org: "Trexquant Investment LP",
+    short: "Trexquant",
     role: "Quantitative Researcher",
     when: "Sep – Oct 2025",
     points: ["Feature-engineered and applied machine-learning methods to generate signals for earnings-call strategies."],
   },
   {
+    id: "startup",
     org: "Stealth startup",
     role: "Co-Founder",
     when: "Apr – Sep 2025",
@@ -35,6 +50,7 @@ const QUANT: Role[] = [
     ],
   },
   {
+    id: "jl-sports",
     org: "JL Sports (NFL)",
     role: "Quantitative Analyst",
     when: "Mar 2025 – present",
@@ -44,7 +60,9 @@ const QUANT: Role[] = [
     ],
   },
   {
+    id: "brown-cs",
     org: "Brown University, Department of Computer Science",
+    short: "Brown CS",
     role: "Reinforcement Learning Research Assistant",
     when: "Jun – Sep 2024",
     points: [
@@ -54,7 +72,9 @@ const QUANT: Role[] = [
     ],
   },
   {
+    id: "brown-sph",
     org: "Brown University School of Public Health",
+    short: "Brown Public Health",
     role: "Software Developer, Research Assistant",
     when: "May 2024 – Mar 2025",
   },
@@ -62,7 +82,9 @@ const QUANT: Role[] = [
 
 const LEADERSHIP: Role[] = [
   {
+    id: "quant-finance-course",
     org: "Introduction to Quantitative Finance I",
+    short: "Intro to Quant Finance I",
     role: "Instructor and course developer",
     when: "Apr – Dec 2024",
     points: [
@@ -71,7 +93,9 @@ const LEADERSHIP: Role[] = [
     ],
   },
   {
+    id: "qtab",
     org: "Quantitative Trading at Brown (QTAB)",
+    short: "QTAB",
     role: "President, researcher, software lead",
     when: "Sep 2023 – present",
     points: [
@@ -87,7 +111,7 @@ function Timeline({ roles }: { roles: Role[] }) {
   return (
     <ol className="timeline">
       {roles.map((r) => (
-        <li key={r.org + r.role}>
+        <li key={r.id} id={r.id}>
           <div className="timeline__when">{r.when}</div>
           <div>
             <h3>{r.org}</h3>
@@ -116,6 +140,12 @@ export default function Experience() {
             The full record. For the one-page version, see the <NavLink href="/resume/">resume</NavLink>.
           </>
         }
+      />
+      <ExperienceNav
+        items={[
+          ...QUANT.map((r) => ({ id: r.id, when: r.when, role: r.role, org: r.short ?? r.org, group: "Quant & engineering" })),
+          ...LEADERSHIP.map((r) => ({ id: r.id, when: r.when, role: r.role, org: r.short ?? r.org, group: "Teaching & leadership" })),
+        ]}
       />
       <h2 className="kicker" style={{ marginTop: 0 }}>
         Quantitative &amp; engineering
