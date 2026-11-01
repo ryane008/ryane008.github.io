@@ -46,7 +46,7 @@ const HELP = [
   "  traceroute <page>   the route along the strings",
   "",
   "Session",
-  "  anim [on|off]       toggle zoom transitions",
+  "  anim [on|off]       toggle UI Mode (zoom transitions)",
   "  history · clear · echo · whoami · date · alias · exit",
   "",
   "Aliases: home → cd ~/home, board → cd ~, ll → ls -l",
@@ -205,8 +205,8 @@ export function exec(argv: string[], ctx: Ctx): Result {
 
     case "anim": {
       const v = operands[0];
-      if (v === "on" || v === "off") return { animate: v === "on", out: [`zoom transitions ${v}`] };
-      return { out: [`zoom transitions are ${ctx.animate ? "on" : "off"}  (usage: anim on|off)`] };
+      if (v === "on" || v === "off") return { animate: v === "on", out: [`UI Mode ${v}`] };
+      return { out: [`UI Mode is ${ctx.animate ? "on" : "off"}  (usage: anim on|off)`] };
     }
 
     case "neighbors": {

@@ -3,7 +3,7 @@
 Ryan Eng's personal site: a bulletin board of pages tied together with strings. You can get around it in three ways:
 
 - **Navbar and strings.** The masthead links to the main sections. The strip below it lists the current page's graph neighbors, and `[` / `]` step through them.
-- **The board** (`/board/`). Everything is pinned on one canvas you can pan and zoom. With **Zoom** toggled on in the masthead, every page change pulls back to the board, draws the route along the strings, and dives into the next card.
+- **The board** (`/board/`). Everything is pinned on one canvas you can pan and zoom. With **UI Mode** toggled on in the masthead, every page change pulls back to the board, draws the route along the strings, and dives into the next card.
 - **The shell.** Press `` ` ``. The site is a read-only filesystem at `/portfolios/users/ryaneng`. `cd` navigates, `cd ~` goes to the board, and `home` goes to the front page. `help` lists everything, including `neighbors`, `ping`, and `traceroute`.
 
 ## Stack

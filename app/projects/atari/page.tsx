@@ -62,7 +62,7 @@ export default function Atari() {
         <h2>Gameplay</h2>
         <div className="video-slot">
           <div>
-            <b>Recording to come</b>
+            <b><TK>Recording to come</TK></b>
             <br />
             An evaluation episode with the audio channel on, with the waveform the agent hears shown beside the frame.
           </div>
@@ -76,6 +76,13 @@ export default function Atari() {
       <Section title="Results and what we learned">
         <p>
           <TK>Learning curves, the per-game breakdown, and whether audio helped on Amidar (vs. the pixels-only baseline). Paste from the Devpost write-up.</TK>
+        </p>
+      </Section>
+
+      <Section title="What I&rsquo;d do next">
+        <p>
+          Explore how the embeddings, training-stabilization methods, and self-predictive intuition in this
+          reinforcement learning method would translate to a self-supervised learning model.
         </p>
       </Section>
 

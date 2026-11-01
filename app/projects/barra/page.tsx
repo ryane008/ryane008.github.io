@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figure, PageHeader, Section, StringsFooter, TK } from "@/components/Article";
+import { Figure, PageHeader, Section, StringsFooter } from "@/components/Article";
 import { RiskDemo } from "@/components/demos/RiskDemo";
 
 export const metadata: Metadata = { title: "Barra risk model" };
@@ -94,9 +94,20 @@ export default function Barra() {
       </section>
 
       <Section title="What I&rsquo;d do next">
-        <p>
-          <TK>Next steps: results from the bias tests, what surprised you, and whether the dashboard is in use at QTAB or BHIG.</TK>
-        </p>
+        <ul>
+          <li>
+            <b>Specific risk.</b> Explore whether the specific risk I observe across the universe comes down to
+            idiosyncratic PnL, or can be captured by other features.
+          </li>
+          <li>
+            <b>Better return estimates.</b> The mean-variance optimizer currently takes its default expected returns
+            from a Fama–French five-factor model. Next: Black–Litterman, covariance shrinkage, and other estimators.
+          </li>
+          <li>
+            <b>Constraints.</b> Test the optimization landscape and the algorithms I developed under constraints: for
+            example, how a long-only constraint affects the transfer coefficient (TC) in the information ratio.
+          </li>
+        </ul>
       </Section>
 
       <StringsFooter id="barra" />

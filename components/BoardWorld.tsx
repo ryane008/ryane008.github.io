@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DECOR, EDGES, NODES, NodeId, WORLD, hrefFor, neighbors, pinOf } from "@/lib/site";
 import { Clipping } from "./Clipping";
 
@@ -28,9 +28,25 @@ export function BoardWorld({ here, route = [], routeDelay = 0, interactive = fal
   const [hover, setHover] = useState<NodeId | null>(null);
   const lit = new Set<string>(hover ? neighbors(hover).map((n) => edgeKey(hover, n.id)) : []);
   const litNodes = new Set<NodeId>(hover ? [hover, ...neighbors(hover).map((n) => n.id)] : []);
+  const worldRef = useRef<HTMLDivElement>(null);
+
+  // Cards have fixed heights, so clamp each dek to the whole lines that fit and end it with an ellipsis.
+  useEffect(() => {
+    const clamp = () =>
+      worldRef.current?.querySelectorAll<HTMLElement>(".card__dek").forEach((el) => {
+        // Measure the space left in the card, then shrink the dek to the clamped lines.
+        el.style.webkitLineClamp = "";
+        el.style.flex = "";
+        const lh = parseFloat(getComputedStyle(el).lineHeight);
+        el.style.webkitLineClamp = String(Math.max(1, Math.floor(el.clientHeight / lh)));
+        el.style.flex = "none";
+      });
+    clamp();
+    document.fonts?.ready.then(clamp);
+  }, []);
 
   return (
-    <div className="world" style={{ width: WORLD.w, height: WORLD.h }} aria-hidden={!interactive || undefined}>
+    <div ref={worldRef} className="world" style={{ width: WORLD.w, height: WORLD.h }} aria-hidden={!interactive || undefined}>
       <svg className="world__strings" width={WORLD.w} height={WORLD.h} viewBox={`0 0 ${WORLD.w} ${WORLD.h}`}>
         {DECOR.map((d, i) =>
           d.kind === "clipping" ? (

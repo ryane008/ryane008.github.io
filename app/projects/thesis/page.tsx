@@ -61,7 +61,7 @@ export default function Thesis() {
 
       <Section title="Findings">
         <p>
-          <TK>The headline result: which strategy wins, by how much, and what it means for the state&rsquo;s current gauge network.</TK>
+          <TK>Findings to come with our manuscripts and publications!</TK>
         </p>
       </Section>
 

@@ -27,8 +27,9 @@ export default function Home() {
           </p>
           <h1>Ryan Eng</h1>
           <p className="dek">
-            Computer science and applied math at Brown. I build quantitative models, ML systems, and network software,
-            and I bring a reporter&rsquo;s habit to all of it: find out where the numbers came from.
+            Computer Science and Applied Math @ Brown. Researcher, engineer, data scientist. Applying quantitative
+            methods to investigate, interpret, learn, and problem-solve the mysteries of yesterday, today, and
+            tomorrow.
           </p>
           <div className="front__ctas">
             <NavLink href={hrefFor("projects")} className="button button--red">
@@ -67,9 +68,9 @@ export default function Home() {
           </p>
         </div>
         <div>
-          <h3>Zoom the board</h3>
+          <h3>Turn on UI Mode</h3>
           <p>
-            Turn on <b>Zoom</b> in the masthead and page changes pull back to the full board, trace the route, and
+            Switch on <b>UI Mode</b> in the masthead and page changes pull back to the full board, trace the route, and
             dive into the next card. Or open the <NavLink href={BOARD_HREF}>board</NavLink> directly.
           </p>
         </div>

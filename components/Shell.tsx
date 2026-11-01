@@ -118,12 +118,13 @@ export function Shell() {
           transition={{ type: "spring", stiffness: 420, damping: 40 }}
         >
           <header className="shell__bar">
-            <span className="shell__dots" aria-hidden>
-              <i /> <i /> <i />
+            <span className="shell__dots">
+              <button type="button" onClick={() => setShellOpen(false)} aria-label="Close shell" title="Close" />
+              <i aria-hidden /> <i aria-hidden />
             </span>
             <span className="shell__title">guest@ryaneng — {displayPath(cwd)} — zsh</span>
-            <button type="button" className="shell__close" onClick={() => setShellOpen(false)} aria-label="Close shell">
-              esc
+            <button type="button" className="shell__close" onClick={() => setShellOpen(false)} aria-label="Close shell" title="Close (esc)">
+              ×
             </button>
           </header>
           <div ref={scrollRef} className="shell__body" onClick={() => inputRef.current?.focus()}>

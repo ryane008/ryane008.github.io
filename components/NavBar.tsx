@@ -52,10 +52,10 @@ export function NavBar() {
           </NavLink>
         </nav>
         <div className="masthead__tools">
-          <label className="toggle" title="Zoom through the bulletin board when you change pages">
+          <label className="toggle" title="UI Mode: zoom through the bulletin board when you change pages">
             <input type="checkbox" checked={animate} onChange={(e) => setAnimate(e.target.checked)} />
             <span className="toggle__track" aria-hidden />
-            <span className="toggle__label">Zoom</span>
+            <span className="toggle__label">UI Mode</span>
           </label>
           <button
             type="button"
