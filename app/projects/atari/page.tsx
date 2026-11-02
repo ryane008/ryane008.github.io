@@ -86,6 +86,12 @@ export default function Atari() {
         </p>
       </Section>
 
+      <Section title="Thanks">
+        <p>
+          This was a team effort with Julian Beaudry, Adithya Sriram, and Noah Rousell. A special thanks to Noah.
+        </p>
+      </Section>
+
       <StringsFooter id="atari" />
     </>
   );
