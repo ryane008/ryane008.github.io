@@ -8,9 +8,14 @@
   --ink-2: #48443d;
   --ink-3: #79736a;
   --rule: #d8d0c1;
-  --red: #b3261e;
-  --red-ink: #9c1f18;
-  --red-wash: rgba(179, 38, 30, 0.09);
+  --red: #b0202e;
+  --red-ink: #971a26;
+  --red-wash: rgba(176, 32, 46, 0.09);
+  --accent: #2251d1;
+  --accent-ink: #1c45b8;
+  --accent-2: #1a86c7;
+  --accent-wash: rgba(34, 81, 209, 0.09);
+  --accent-grad: linear-gradient(90deg, var(--accent), var(--accent-2));
   --blue: #2a5a8a;
   --tk: #fff1a8;
   --board: #e9e3d6;
@@ -21,8 +26,8 @@
   --term-bg: #151513;
   --term-ink: #e9e6df;
   --term-dim: #8e897f;
-  --term-accent: #f08a7e;
-  --term-dir: #7fb0e0;
+  --term-accent: #85a5ff;
+  --term-dir: #6fd0c4;
 
   --serif: var(--font-serif), "Iowan Old Style", Georgia, serif;
   --mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
@@ -43,9 +48,13 @@
     --ink-2: #c3beb3;
     --ink-3: #8f897e;
     --rule: #39372f;
-    --red: #e5574c;
-    --red-ink: #f07a70;
-    --red-wash: rgba(229, 87, 76, 0.14);
+    --red: #dc3c3c;
+    --red-ink: #f26d6d;
+    --red-wash: rgba(220, 60, 60, 0.14);
+    --accent: #3d6cf0;
+    --accent-ink: #85a5ff;
+    --accent-2: #3fb4e6;
+    --accent-wash: rgba(61, 108, 240, 0.16);
     --blue: #7fb0e0;
     --tk: #5a4d12;
     --board: #191917;
@@ -84,15 +93,15 @@ body {
 
 a {
   color: inherit;
-  text-decoration-color: var(--red);
+  text-decoration-color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 a:hover {
-  color: var(--red-ink);
+  color: var(--accent-ink);
 }
 :focus-visible {
-  outline: 2px solid var(--red);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -197,7 +206,7 @@ figcaption,
 }
 .masthead__nav a.is-active {
   color: var(--ink);
-  border-bottom-color: var(--red);
+  border-image: var(--accent-grad) 1;
 }
 
 .masthead__tools {
@@ -255,8 +264,8 @@ figcaption,
 }
 .chip--s0 {
   border-style: dashed;
-  border-color: var(--blue);
-  color: var(--blue);
+  border-color: var(--ink-3);
+  color: var(--ink-3);
 }
 .chip:hover,
 .chip:focus-visible {
@@ -304,15 +313,15 @@ figcaption,
   transition: transform 0.2s, background 0.2s;
 }
 .toggle input:checked + .toggle__track {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 .toggle input:checked + .toggle__track::after {
   transform: translateX(13px);
   background: var(--card);
 }
 .toggle input:focus-visible + .toggle__track {
-  outline: 2px solid var(--red);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -328,8 +337,8 @@ figcaption,
   cursor: pointer;
 }
 .shell-btn.is-on {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 @media (max-width: 640px) {
@@ -385,7 +394,7 @@ main {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--red-ink);
+  color: var(--accent-ink);
   font-weight: 500;
 }
 .kicker__path {
@@ -449,7 +458,7 @@ main {
   line-height: 0.82;
   padding: 6px 10px 0 0;
   font-weight: 700;
-  color: var(--red-ink);
+  color: var(--accent-ink);
 }
 
 .pull {
@@ -502,7 +511,8 @@ figcaption {
   color: var(--ink-2);
   margin-top: 8px;
   padding-left: 10px;
-  border-left: 2px solid var(--red);
+  border-left: 2px solid var(--accent);
+  border-image: linear-gradient(180deg, var(--accent), var(--accent-2)) 1;
 }
 .credit {
   color: var(--ink-3);
@@ -521,7 +531,7 @@ figcaption {
 .tk b {
   font-family: var(--mono);
   font-size: 0.75em;
-  color: var(--red-ink);
+  color: var(--accent-ink);
 }
 
 .callout {
@@ -543,7 +553,7 @@ figcaption {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--red-ink);
+  color: var(--accent-ink);
   margin: 0 0 8px;
 }
 
@@ -607,9 +617,10 @@ figcaption {
   background: var(--ink);
   color: var(--paper);
 }
-.button--red {
-  background: var(--red);
-  border-color: var(--red);
+.button--primary {
+  /* Ends deeper than --accent-2 so white text stays legible across the fill. */
+  background: linear-gradient(90deg, var(--accent), #1a72b5);
+  border-color: var(--accent);
   color: #fff;
 }
 
@@ -673,7 +684,7 @@ pre.diagram {
   border-top-color: var(--red);
 }
 .string-card--s0 {
-  border-top-color: var(--blue);
+  border-top-color: var(--ink-3);
   border-top-style: dashed;
 }
 .string-card__kicker {
@@ -756,7 +767,7 @@ pre.diagram {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin: 0 0 14px;
-  color: var(--red-ink);
+  color: var(--accent-ink);
 }
 .story {
   text-decoration: none;
@@ -768,7 +779,7 @@ pre.diagram {
 }
 .story:hover .story__title {
   text-decoration: underline;
-  text-decoration-color: var(--red);
+  text-decoration-color: var(--accent);
 }
 .story__kicker {
   font-family: var(--mono);
@@ -904,7 +915,7 @@ pre.diagram {
 .dossier__num {
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--red-ink);
+  color: var(--accent-ink);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1028,9 +1039,9 @@ pre.diagram {
   transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .xp-nav__track > li[data-id]:has(.is-active)::after {
-  background: var(--red);
-  border-color: var(--red);
-  box-shadow: 0 0 0 4px var(--red-wash);
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-wash);
 }
 .xp-nav__group {
   display: flex;
@@ -1041,7 +1052,7 @@ pre.diagram {
   line-height: 1.3;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--red-ink);
+  color: var(--accent-ink);
 }
 .xp-nav__group:not(:first-child) {
   padding-left: 12px;
@@ -1067,8 +1078,8 @@ pre.diagram {
   box-shadow: var(--shadow);
 }
 .xp-card.is-active {
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px var(--red-wash), 0 6px 18px color-mix(in srgb, var(--red) 28%, transparent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-wash), 0 6px 18px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 .xp-card__when {
   font-family: var(--mono);
@@ -1076,7 +1087,7 @@ pre.diagram {
   color: var(--ink-3);
 }
 .xp-card.is-active .xp-card__when {
-  color: var(--red-ink);
+  color: var(--accent-ink);
 }
 .xp-card__role {
   font-size: 15px;
@@ -1248,7 +1259,7 @@ pre.diagram {
   opacity: 0.85;
 }
 .string--s0 {
-  stroke: var(--blue);
+  stroke: var(--ink-3);
   stroke-width: 2.2;
   stroke-dasharray: 2 7;
 }
@@ -1286,12 +1297,12 @@ pre.diagram {
   height: 18px;
   margin-left: -9px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #f37a70, var(--red) 55%, #6e130e);
+  background: radial-gradient(circle at 35% 35%, #f07272, var(--red) 55%, #6a1018);
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.35);
   z-index: 4;
 }
 .pin--spoke {
-  background: radial-gradient(circle at 35% 35%, #9cc4ea, var(--blue) 55%, #173451);
+  background: radial-gradient(circle at 35% 35%, #e4e6ea, #9aa0a8 55%, #474b51);
 }
 .pin--small {
   width: 14px;
@@ -1316,7 +1327,7 @@ pre.diagram {
   transition: box-shadow 0.2s, opacity 0.2s, translate 0.2s;
 }
 .card--spoke {
-  border-top: 4px dashed var(--blue);
+  border-top: 4px dashed var(--ink-3);
   padding: 30px 18px 16px;
 }
 a.card:hover,
@@ -1465,7 +1476,7 @@ a.card:focus-visible {
   border-top-width: 2px;
 }
 .swatch--s0 {
-  border-top: 3px dotted var(--blue);
+  border-top: 3px dotted var(--ink-3);
 }
 
 /* Board page (~) */
@@ -1549,7 +1560,7 @@ a.card:focus-visible {
 }
 .tree a {
   text-decoration: none;
-  color: var(--blue);
+  color: var(--accent-ink);
 }
 .tree .tree__dek {
   color: var(--ink-3);
@@ -1602,7 +1613,8 @@ a.card:focus-visible {
   font-family: var(--mono);
   font-size: 13.5px;
   line-height: 1.55;
-  border-top: 2px solid var(--red);
+  border-top: 2px solid var(--accent);
+  border-image: var(--accent-grad) 1;
   box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.3);
 }
 .shell__bar {
@@ -1740,7 +1752,7 @@ a.card:focus-visible {
   gap: 8px;
 }
 .demo__controls input[type="range"] {
-  accent-color: var(--red);
+  accent-color: var(--accent);
   width: 120px;
 }
 .demo__controls .seg {
@@ -1792,7 +1804,7 @@ a.card:focus-visible {
   gap: 8px;
 }
 .weights__row input {
-  accent-color: var(--red);
+  accent-color: var(--accent);
   width: 100%;
   min-width: 0;
 }

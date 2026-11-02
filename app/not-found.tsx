@@ -10,7 +10,7 @@ export default function NotFound() {
       <h1>This page isn&rsquo;t on the board.</h1>
       <p className="dek">An earlier version of this site may have linked here. Try the board, or press ` and type ls.</p>
       <p style={{ display: "flex", gap: 10, marginTop: 24 }}>
-        <NavLink className="button button--red" href="/board/">
+        <NavLink className="button button--primary" href="/board/">
           Go to the board
         </NavLink>
         <NavLink className="button" href="/">

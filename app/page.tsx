@@ -32,7 +32,7 @@ export default function Home() {
             tomorrow.
           </p>
           <div className="front__ctas">
-            <NavLink href={hrefFor("projects")} className="button button--red">
+            <NavLink href={hrefFor("projects")} className="button button--primary">
               Read the investigations →
             </NavLink>
             <NavLink href={hrefFor("resume")} className="button">

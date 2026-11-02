@@ -2,7 +2,7 @@
 export function AtariDiagram({ compact = false }: { compact?: boolean }) {
   const box = (x: number, y: number, w: number, h: number, title: string, sub?: string, accent = false) => (
     <g>
-      <rect x={x} y={y} width={w} height={h} rx={3} fill="var(--card)" stroke={accent ? "var(--red)" : "var(--ink)"} strokeWidth={accent ? 2 : 1.2} />
+      <rect x={x} y={y} width={w} height={h} rx={3} fill="var(--card)" stroke={accent ? "var(--accent)" : "var(--ink)"} strokeWidth={accent ? 2 : 1.2} />
       <text x={x + w / 2} y={y + (sub ? h / 2 - 3 : h / 2 + 5)} textAnchor="middle" fontSize="14" fontWeight="600" fill="var(--ink)">
         {title}
       </text>
@@ -13,8 +13,8 @@ export function AtariDiagram({ compact = false }: { compact?: boolean }) {
       )}
     </g>
   );
-  const arrow = (x1: number, y1: number, x2: number, y2: number, red = false) => (
-    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={red ? "var(--red)" : "var(--ink-2)"} strokeWidth={1.4} markerEnd={`url(#atari-arr${red ? "-red" : ""})`} />
+  const arrow = (x1: number, y1: number, x2: number, y2: number, accent = false) => (
+    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={accent ? "var(--accent)" : "var(--ink-2)"} strokeWidth={1.4} markerEnd={`url(#atari-arr${accent ? "-accent" : ""})`} />
   );
   return (
     <svg
@@ -24,9 +24,9 @@ export function AtariDiagram({ compact = false }: { compact?: boolean }) {
       style={{ width: "100%", height: "auto", fontFamily: "var(--serif)", maxWidth: compact ? 520 : 720 }}
     >
       <defs>
-        {["", "-red"].map((s) => (
+        {["", "-accent"].map((s) => (
           <marker key={s} id={`atari-arr${s}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-            <path d="M0,0 L10,5 L0,10 z" fill={s ? "var(--red)" : "var(--ink-2)"} />
+            <path d="M0,0 L10,5 L0,10 z" fill={s ? "var(--accent)" : "var(--ink-2)"} />
           </marker>
         ))}
       </defs>
@@ -47,8 +47,8 @@ export function AtariDiagram({ compact = false }: { compact?: boolean }) {
         self-predictive loss (×5)
       </text>
       {!compact && (
-        <text x={10} y={22} fontSize="11" fill="var(--red-ink)" fontFamily="var(--mono)">
-          RED = WHAT WE ADDED TO BBF
+        <text x={10} y={22} fontSize="11" fill="var(--accent-ink)" fontFamily="var(--mono)">
+          BLUE = WHAT WE ADDED TO BBF
         </text>
       )}
     </svg>

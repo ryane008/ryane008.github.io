@@ -19,7 +19,7 @@ export default function Resume() {
         }
       />
       <p style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <a className="button button--red" href={PDF} download>
+        <a className="button button--primary" href={PDF} download>
           Download PDF
         </a>
         <a className="button" href={PDF} target="_blank" rel="noreferrer">
