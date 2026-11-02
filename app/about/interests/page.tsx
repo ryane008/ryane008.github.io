@@ -58,8 +58,8 @@ const HOBBIES: { title: string; body: React.ReactNode; photos: Photo[] }[] = [
       <>
         I grew up loving sports and playing them, from the pickup games that defined my after-school, &ldquo;good
         ol&rsquo; days&rdquo; childhood adventures, stretching on for as long as the sun allowed. I also really enjoy
-        the tactics: the qualitative and quantitative statistics and intangibles that drive strategy and performance,
-        and that we subconsciously process as &ldquo;having a good or bad game.&rdquo;
+        the tactics: the statistics and intangibles, quantitative and qualitative, that drive strategy and
+        performance, things we subconsciously process as &ldquo;having a good or bad game.&rdquo;
       </>
     ),
     photos: [{ src: "/media/photos/ryan-race-finish.jpg", caption: "Crossing the clock" }],

@@ -19,7 +19,7 @@ export default function About() {
         <p>
           I love the outdoors and sports (possibly too much). From the special moments in each of those spheres to the
           way they bring out the best in people, I think both have the unique gift of bringing people together and
-          inspiring generation after generation to keep achieving and become something more.
+          inspiring generation after generation to keep achieving and becoming something more.
         </p>
       </div>
 
