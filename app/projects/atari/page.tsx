@@ -15,7 +15,7 @@ export default function Atari() {
         dek="Human players hear the game. Sample-efficient agents don't. We re-implemented Bigger, Better, Faster in TensorFlow and gave it ears."
         meta={
           <>
-            Final project, Brown CSCI 1470 Deep Learning ·{" "}
+            Final project, Brown CSCI 1470 Deep Learning · with Julian Beaudry, Adithya Sriram, and Noah Rousell ·{" "}
             <a href={DEVPOST} target="_blank" rel="noreferrer">
               Devpost write-up ↗
             </a>
